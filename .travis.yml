@@ -1,16 +1,19 @@
 language: node_js
 node_js:
-  - 10.13.0
-install:
-  - npm install
-script:
-  - npm start
+  - "10"
+sudo: false
+ 
 branches:
   only:
-    - master
-deploy: 
+  - master
+ 
+cache:
+  directories:
+    - node_modules
+ 
+deploy:
   provider: heroku
-  api_key:
-    secure: 4d0f2754-3a8f-4960-bbcf-492fbd4a8905
-  app:
-    master: parcel-tracking-system-be
+  skip_cleanup: true
+  keep-history: true
+  api-key: 4d0f2754-3a8f-4960-bbcf-492fbd4a8905
+  app: parcel-tracking-system-be
