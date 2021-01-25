@@ -3,6 +3,8 @@ node_js:
   - 10.13.0
 install:
   - npm install
+script:
+  - npm run test
 branches:
   only:
     - master
@@ -12,3 +14,4 @@ deploy:
     secure: 4d0f2754-3a8f-4960-bbcf-492fbd4a8905
   app:
     master: parcel-tracking-system-be
+    
