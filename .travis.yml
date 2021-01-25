@@ -1,0 +1,11 @@
+language: node_js
+node_js: 
+  - "stable"
+script: "true"
+deploy: 
+  provider: heroku
+  api_key:
+    secure: 4d0f2754-3a8f-4960-bbcf-492fbd4a8905
+  on:
+    tags: true
+    all_branches: true
