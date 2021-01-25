@@ -8,7 +8,7 @@ app.use(express.json());
 
 const log = (msg) => console.log(msg);
 app.get('/' , (req,res)=>{
-    res.send('hello viewers' + req.params.id)
+    res.send('parcel tracking api')
 })
 
 app.post('/' , (req,res)=>{
