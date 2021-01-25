@@ -1,5 +1,7 @@
 # Parcel Tracking Api ()
 
+[![Build Status](https://travis-ci.org/Bawanthathilan/parcel-tracking-system-be.svg?branch=master)](https://travis-ci.org/Bawanthathilan/parcel-tracking-system-be)
+
 ## Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
