@@ -2,6 +2,7 @@
 import express from 'express';
 import models from './models/index.js';
 import mongoose from 'mongoose';
+import connectWithDb from './mongo';
 
 
 
@@ -9,21 +10,7 @@ const port = process.env.PORT || 3000;
 const app = express();
 
 app.use(express.json());
-
 const log = (msg) => console.log(msg);
-
-const uri = "mongodb://localhost:27017/parcelapi";
-const options = {};
-
-const connectWithDb = ()=>{
-    mongoose.connect(uri , options,(err , db)=>{
-        if(err){
-            console.error(err);
-        }
-        else log("database connection established");
-    });
-};
-
 connectWithDb();
 
 
