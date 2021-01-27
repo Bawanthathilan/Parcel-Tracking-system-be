@@ -1,5 +1,5 @@
 import express from 'express';
-import models from './models/index.js';
+import models from '../models';
 const router = express.Router();
 
 const getHandler = (req,res) =>{
@@ -19,3 +19,9 @@ const postHandler = (req,res)=>{
 
 router.get('/' , getHandler);
 router.post('/' , postHandler);
+
+const configure = (app) =>{
+    app.use('/users' , router);
+}
+
+export default configure;

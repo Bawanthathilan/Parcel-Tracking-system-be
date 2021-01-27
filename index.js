@@ -1,7 +1,6 @@
 
 import express from 'express';
-
-import mongoose from 'mongoose';
+import configure from './controllers' 
 import connectWithDb from './mongo';
 
 
@@ -12,6 +11,8 @@ app.use(express.json());
 const log = (msg) => console.log(msg);
 
 connectWithDb();
+
+configure(app);
 
 app.listen(port, ()=>{
     console.log("Listening to port" + port);
