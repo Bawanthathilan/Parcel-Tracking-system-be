@@ -1,20 +1,16 @@
 import express from 'express';
 import models from '../models';
+import {saveUser} from '../services/userService';
 const router = express.Router();
 
 const getHandler = (req,res) =>{
     res.send('hello viewers' + req.query.id);
 };
 
-const postHandler = (req,res)=>{
-    const body = req.body;
-    const user = new models.User({username: body.username , createdAt: new Date()});
-    user.save().then((savedUser)=>{
-        res.status(201).send('User saved Id' + savedUser._id);
-    }).catch((error)=>{
-        res.status(500).send(error);
-    });
-    
+const postHandler = async (req,res)=>{
+    const body = req.body; 
+    const user = await saveUser(body);
+    res.send(user.id);
 }
 
 router.get('/' , getHandler);
